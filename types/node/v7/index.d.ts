@@ -2077,8 +2077,9 @@ declare module "net" {
         write(str: string, encoding?: string, cb?: Function): boolean;
         write(str: string, encoding?: string, fd?: string): boolean;
 
-        connect(port: number, host?: string, connectionListener?: Function): void;
-        connect(path: string, connectionListener?: Function): void;
+        connect(port: number, host?: string, connectionListener?: Function): net.Socket;
+        connect(path: string, connectionListener?: Function): net.Socket;
+        connect(options: Object, connectionListener?: Function): net.Socket;
         bufferSize: number;
         setEncoding(encoding?: string): this;
         write(data: any, encoding?: string, callback?: Function): void;
